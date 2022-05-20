@@ -5,6 +5,15 @@ Design data model with all the tables to hold data,  import the CSVs into a SQL 
 and perform analysis using  Hive/Impala/Spark/SparkML using the data and create data and ML pipelines.
 Required to create end to end data pipeline and analyzing the data.
 
+The data is contained in the 6 csv files:
+
+titles.csv -> This file contains the different job titles of the employees.
+employees.csv -> Contains all data related to each employee, such as employee id, name, age,sex, date of hiring, etc.
+salaries.csv -> contains salary of each employee.
+departments.csv -> enlists the various departments in the company.
+dept_manager.csv -> indicates which employee manages which department.
+dept_emp.csv -> indicates wich department each employee belongs to.
+
 Technology Stack:
 Worked on below technologies to complete this project.
 - MySQL (to create database)
