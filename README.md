@@ -7,12 +7,12 @@ Required to create end to end data pipeline and analyzing the data.
 
 The data is contained in the 6 csv files:
 
-titles.csv -> This file contains the different job titles of the employees.
-employees.csv -> Contains all data related to each employee, such as employee id, name, age,sex, date of hiring, etc.
-salaries.csv -> contains salary of each employee.
-departments.csv -> enlists the various departments in the company.
-dept_manager.csv -> indicates which employee manages which department.
-dept_emp.csv -> indicates wich department each employee belongs to.
+1. titles.csv -> This file contains the different job titles of the employees.
+2. employees.csv -> Contains all data related to each employee, such as employee id, name, age,sex, date of hiring, etc.
+3. salaries.csv -> contains salary of each employee.
+4. departments.csv -> enlists the various departments in the company.
+5. dept_manager.csv -> indicates which employee manages which department.
+6. dept_emp.csv -> indicates wich department each employee belongs to.
 
 Technology Stack:
 Worked on below technologies to complete this project.
