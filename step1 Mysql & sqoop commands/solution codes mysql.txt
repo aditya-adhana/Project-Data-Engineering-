@@ -1,0 +1,193 @@
+---------------------CREATING TABLES----------------------
+mysql> source create_data.sql
+mysql> show tables;                                                                                                                                                   
++------------------------+                                                                                                                                            
+| Tables_in_anabig114225 |                                                                                                                                            
++------------------------+                                                                                                                                            
+| department_employees   |                                                                                                                                            
+| department_manager     |                                                                                                                                            
+| departments            |                                                                                                                                            
+| employees              |                                                                                                                                            
+| salaries               |                                                                                                                                            
+| titles                 |                                                                                                                                            
++------------------------+                                                                                                                                            
+6 rows in set (0.00 sec) 
+
+-----------------LOADING DATA-------------------------------
+load data local infile '/home/anabig114225/Data/departments.csv' into table departments FIELDS TERMINATED BY ',' IGNORE 1 LINES;
+load data local infile '/home/anabig114225/Data/dept_emp.csv' into table department_employees FIELDS TERMINATED BY ',' IGNORE 1 LINES;
+load data local infile '/home/anabig114225/Data/dept_manager.csv' into table department_manager FIELDS TERMINATED BY',' IGNORE 1 LINES;
+load data local infile '/home/anabig114225/Data/salaries.csv' into table salaries FIELDS TERMINATED BY ',' IGNORE 1 LINES;
+load data local infile '/home/anabig114225/Data/titles.csv' into table titles FIELDS TERMINATED BY ',' IGNORE 1 LINES;
+load data local infile '/home/anabig114225/Data/employees.csv' into table employees FIELDS TERMINATED BY ',' IGNORE 1 LINES;
+
+
+mysql> load data local infile '/home/anabig114225/Data/departments.csv' into table departments FIELDS TERMINATED BY ',' IGNORE 1 LINES;                               
+Query OK, 9 rows affected (0.00 sec)                                                                                                                                  
+Records: 9  Deleted: 0  Skipped: 0  Warnings: 0                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                    
+mysql> load data local infile '/home/anabig114225/Data/dept_emp.csv' into table department_employees FIELDS TERMINATED BY ',' IGNORE 1 LINES;                         
+Query OK, 331603 rows affected (1.36 sec)                                                                                                                             
+Records: 331603  Deleted: 0  Skipped: 0  Warnings: 0                                                                                                                  
+                                                                                                                                                                                                                                                                                                                                    
+mysql> load data local infile '/home/anabig114225/Data/dept_manager.csv' into table department_manager FIELDS TERMINATED BY',' IGNORE 1 LINES;                        
+Query OK, 24 rows affected (0.00 sec)                                                                                                                                 
+Records: 24  Deleted: 0  Skipped: 0  Warnings: 0                                                                                                                      
+                                                                                                                                                                                                                                                                                                                                    
+mysql> load data local infile '/home/anabig114225/Data/salaries.csv' into table salaries FIELDS TERMINATED BY ',' IGNORE 1 LINES;                                     
+Query OK, 300024 rows affected (1.20 sec)                                                                                                                             
+Records: 300024  Deleted: 0  Skipped: 0  Warnings: 0                                                                                                                  
+                                                                                                                                                                
+mysql> load data local infile '/home/anabig114225/Data/titles.csv' into table titles FIELDS TERMINATED BY ',' IGNORE 1 LINES;                                         
+Query OK, 7 rows affected (0.00 sec)                                                                                                                                  
+Records: 7  Deleted: 0  Skipped: 0  Warnings: 0                                                                                                                       
+                                                                                                                                                                                                                                                                                                                                      
+mysql> load data local infile '/home/anabig114225/Data/employees.csv' into table employees FIELDS TERMINATED BY ',' IGNORE 1 LINES;                                   
+Query OK, 300024 rows affected (3.14 sec)                                                                                                                             
+Records: 300024  Deleted: 0  Skipped: 0  Warnings: 0 
+
+-------CHECKING OUR DATA-------------
+
+select * from titles;                                                                                                                                          
++----------+--------------------+                                                                                                                                     
+| title_id | title              |                                                                                                                                     
++----------+--------------------+                                                                                                                                     
+| e0001    | Assistant Engineer |                                                                                                                                     
+| e0002    | Engineer           |                                                                                                                                     
+| e0003    | Senior Engineer    |                                                                                                                                     
+| e0004    | Technique Leader   |                                                                                                                                     
+| m0001    | Manager            |                                                                                                                                     
+| s0001    | Staff              |                                                                                                                                     
+| s0002    | Senior Staff       |                                                                                                                                     
++----------+--------------------+                                                                                                                                     
+7 rows in set (0.00 sec)                                                                                                                                              
+                                                                                                                                                                      
+mysql> select * from departments;                                                                                                                                     
++---------+----------------------+                                                                                                                                    
+| dept_no | dept_name            |                                                                                                                                    
++---------+----------------------+                                                                                                                                    
+| d001    | "Marketing"          |                                                                                                                                    
+| d002    | "Finance"            |                                                                                                                                    
+| d003    | "Human Resources"    |                                                                                                                                    
+| d004    | "Production"         |                                                                                                                                    
+| d005    | "development"        |                                                                                                                                    
+| d006    | "Quality Management" |                                                                                                                                    
+| d007    | "Sales"              |                                                                                                                                    
+| d008    | "Research"           |                                                                                                                                    
+| d009    | "Customer Service"   |                                                                                                                                    
++---------+----------------------+                                                                                                                                    
+9 rows in set (0.00 sec)                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                                                                                                            
+mysql> select * from salaries limit 4;                                                                                                                                
++--------+--------+                                                                                                                                                   
+| emp_no | salary |                                                                                                                                                   
++--------+--------+                                                                                                                                                   
+|  10001 |  60117 |                                                                                                                                                   
+|  10002 |  65828 |                                                                                                                                                   
+|  10003 |  40006 |                                                                                                                                                   
+|  10004 |  40054 |                                                                                                                                                   
++--------+--------+                                                                                                                                                   
+4 rows in set (0.00 sec)                                                                                                                                              
+                                                                                                                                                                                                                                                                                                                
+                                                                                                                                                                      
+mysql> select * from employees limit 10;                                                                                                                              
++--------+---------------+------------+------------+-----------+-----+------------+----------------+-------------------------+--------------+------------+            
+| emp_no | emp_titles_id | birth_date | first_name | last_name | sex | hire_date  | no_of_projects | Last_performance_rating | left_company | last_date  |            
++--------+---------------+------------+------------+-----------+-----+------------+----------------+-------------------------+--------------+------------+            
+ | 10001 | e0003         | 9/2/1953   | Georgi     | Facello   | M   | 6/26/1986  |              9 | C                       |            1 | 7/30/1994               
+          |s0001         | 6/2/1964   | Bezalel    | Simmel    | F   | 11/21/1985 |              8 | B                       |            0 |                         
+          |e0003         | 12/3/1959  | Parto      | Bamford   | M   | 8/28/1986  |              1 | C                       |            0 |                         
+          |e0003         | 5/1/1954   | Chirstian  | Koblick   | M   | 12/1/1986  |              5 | A                       |            0 |                         
+          |s0001         | 1/21/1955  | Kyoichi    | Maliniak  | M   | 9/12/1989  |              6 | A                       |            0 |                         
+          |e0003         | 4/20/1953  | Anneke     | Preusig   | F   | 6/2/1989   |             10 | B                       |            0 |                         
+ | 10007 | s0001         | 5/23/1957  | Tzvetan    | Zielinski | F   | 2/10/1989  |              6 | B                       |            1 | 9/18/2002               
+          |e0001         | 2/19/1958  | Saniya     | Kalloufi  | M   | 9/15/1994  |              9 | C                       |            0 |                         
+          |e0003         | 4/19/1952  | Sumant     | Peac      | F   | 2/18/1985  |              8 | B                       |            0 |                         
+          |e0002         | 6/1/1963   | Duangkaew  | Piveteau  | F   | 8/24/1989  |              4 | A                       |            0 |                         
++--------+---------------+------------+------------+-----------+-----+------------+----------------+-------------------------+--------------+------------+            
+10 rows in set (0.00 sec)                                                                                                                                             
+                                                                                                                                                                      
+                                                                                          
+mysql> select * from department_manager limit 10;                                                                                                                     
++---------+--------+                                                                                                                                                  
+| dept_no | emp_no |                                                                                                                                                  
++---------+--------+                                                                                                                                                  
+| d001    | 110022 |                                                                                                                                                  
+| d001    | 110039 |                                                                                                                                                  
+| d002    | 110085 |                                                                                                                                                  
+| d002    | 110114 |                                                                                                                                                  
+| d003    | 110183 |                                                                                                                                                  
+| d003    | 110228 |                                                                                                                                                  
+| d004    | 110303 |                                                                                                                                                  
+| d004    | 110344 |                                                                                                                                                  
+| d004    | 110386 |                                                                                                                                                  
+| d004    | 110420 |                                                                                                                                                  
++---------+--------+                                                                                                                                                  
+10 rows in set (0.00 sec)                                                                                                                                             
+                                                                                                                                                                      
+mysql> select * from department_employees limit 10;                                                                                                                   
++--------+---------+                                                                                                                                                  
+| emp_no | dept_no |                                                                                                                                                  
++--------+---------+                                                                                                                                                  
+|  10001 | d005    |                                                                                                                                                  
+|  10002 | d007    |                                                                                                                                                  
+|  10003 | d004    |                                                                                                                                                  
+|  10004 | d004    |                                                                                                                                                  
+|  10005 | d003    |                                                                                                                                                  
+|  10006 | d005    |                                                                                                                                                  
+|  10007 | d008    |                                                                                                                                                  
+|  10008 | d005    |                                                                                                                                                  
+|  10009 | d006    |                                                                                                                                                  
+|  10010 | d004    |                                                                                                                                                  
++--------+---------+                                                                                                                                                  
+10 rows in set (0.00 sec)
+
+
+----------COUNTING RECORDS 
+mysql> select count(*) from employees;                                                                                                                                
++----------+                                                                                                                                                          
+| count(*) |                                                                                                                                                          
++----------+                                                                                                                                                          
+|   300024 |                                                                                                                                                          
++----------+                                                                                                                                                          
+1 row in set (0.08 sec)                                                                                                                                               
+                                                                                                                                                                      
+mysql> select count(*) from titles;                                                                                                                                   
++----------+                                                                                                                                                          
+| count(*) |                                                                                                                                                          
++----------+                                                                                                                                                          
+|        7 |                                                                                                                                                          
++----------+                                                                                                                                                          
+1 row in set (0.00 sec)                                                                                                                                               
+                                                                                                                                                                      
+mysql> select count(*) from departments;                                                                                                                              
++----------+                                                                                                                                                          
+| count(*) |                                                                                                                                                          
++----------+                                                                                                                                                          
+|        9 |                                                                                                                                                          
++----------+                                                                                                                                                          
+1 row in set (0.01 sec)                                                                                                                                               
+                                                                                                                                                                      
+mysql> select count(*) from department_manager;                                                                                                                       
++----------+                                                                                                                                                          
+| count(*) |                                                                                                                                                          
++----------+                                                                                                                                                          
+|       24 |                                                                                                                                                          
++----------+                                                                                                                                                          
+1 row in set (0.00 sec)                                                                                                                                               
+                                                                                                                                                                      
+mysql> select count(*) from department_employees;                                                                                                                     
++----------+                                                                                                                                                          
+| count(*) |                                                                                                                                                          
++----------+                                                                                                                                                          
+|   331603 |                                                                                                                                                          
++----------+                                                                                                                                                          
+1 row in set (0.15 sec)  
+
+mysql> select count(*) from salaries;                                                                                                                                 
++----------+                                                                                                                                                          
+| count(*) |                                                                                                                                                          
++----------+                                                                                                                                                          
+|   300024 |                                                                                                                                                          
++----------+                                                                                                                                                          
+1 row in set (0.15 sec)
