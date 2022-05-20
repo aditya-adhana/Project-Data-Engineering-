@@ -1,0 +1,8 @@
+#Run the following command in shell for table creation 
+hive -f create_database_table_pipeline_sql.sql
+
+# To run above command and execute sqooop for transfering the data, pipeline run .sh file which contains 
+# the sql file too in. Run these in shell.
+sh mysql_sqoop_pipeline_sh.sh
+
+# the query inside will be executed 
