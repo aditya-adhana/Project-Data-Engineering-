@@ -5,3 +5,5 @@ sqoop import-all-tables  --connect jdbc:mysql://ip-10-1-1-204.ap-south-1.compute
 
 hdfs dfs -mkdir projectschema
 hdfs dfs -copyFromLocal ~/*.avsc projectschema
+
+# run sqoop for data transfer and use hdfs dfs -mkdir for directory creation 
