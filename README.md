@@ -15,3 +15,5 @@ Worked on below technologies to complete this project.
 - Impala (to perform the EDA)
 - SparkSQL (to perform the EDA)
 - SparkML (to perform model building
+
+All the codes are given accordingly as per the steps and finally a Project Documentation has been prepared well. 
